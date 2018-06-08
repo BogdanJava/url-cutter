@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" xmlns:="http://www.w3.org/2001/XMLSchema" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+</head>
+<body style="text-align: center; padding: 50px;">
+<div class="page-header">
+    <h1>Your URL has been successfully compressed</h1>
+    <p>Was: <a th:href="${link}" th:text="${link}"></a></p>
+    <p>Became: <a th:href="${compressed}" th:text="${compressed}"></a></p>
+    <div class="input-group">
+        <span class="input-group-addon" id="addon">Copy your new url from here</span>
+        <input type="text" th:autofocus="${true}" class="form-control" readonly="readonly" aria-describedby="addon"
+               th:value="${compressed}"/>
+    </div>
+</div>
+</body>
+</html>

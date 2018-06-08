@@ -9,13 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping
 import javax.servlet.http.HttpServletResponse
 
 @Controller
-@RequestMapping("/{key}")
 class RedirectController {
 
     @Autowired
     lateinit var keyMapperService: KeyMapperService
 
-    @GetMapping
+    @GetMapping("/")
+    fun home(): String {
+        return "home"
+    }
+
+    @GetMapping("/{key}")
     fun redirect(@PathVariable key: String, response: HttpServletResponse) {
 
         val result = keyMapperService.getLink(key)
